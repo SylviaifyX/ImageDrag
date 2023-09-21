@@ -1,5 +1,5 @@
 import List from "../List/list";
-import Navbar from "../../Component/NavBar/nav";
+import Navbar from "../../Component/Navbar/nav"
 
 
 
