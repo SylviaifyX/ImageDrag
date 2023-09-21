@@ -10,57 +10,57 @@ const imageList = [
         id: 1,
         tag: "Bag",
         des: "feel the love of a chic bag",
-        image: "/assets/bag1.jpg"
+        image: "assets/bag1.jpg"
 
     },
     {
         id: 2,
         tag: "Bag",
         des: "feel the love of a chic bag",
-        image: "/assets/bag2.jpg"
+        image: "assets/bag2.jpg"
 
     },
     {
         id: 3,
         tag: "Bag",
         des: "feel the love of a chic bag",
-        image: "/assets/bag1.jpg"
+        image: "assets/bag1.jpg"
     },
     {
         id: 4,
         tag: "Food",
         des: "food is the gift of life",
-        image: "/assets/food1.jpg"
+        image: "assets/food1.jpg"
     },
     {
         id: 5,
         tag: "Food",
         des: "food is the gift of life",
-        image: "/assets/food1.jpg"
+        image: "assets/food1.jpg"
     },
     {
         id: 6,
         tag: "Shoe",
         des: "walk like a boss",
-        image: "/assets/shoe1.jpg"
+        image: "assets/shoe1.jpg"
     },
     {
         id: 7,
         tag: "Shoe",
         des: "walk like a boss",
-        image: "/assets/shoe2.jpg"
+        image: "assets/shoe2.jpg"
     },
     {
         id: 8,
         tag: "Shoe",
         des: "walk like a boss",
-        image: "/assets/shoe3.jpg"
+        image: "assets/shoe3.jpg"
     },
     {
         id: 9,
         tag: "Shoe",
         des: "walk like a boss",
-        image: "/assets/shoe3.jpg"
+        image: "assets/shoe3.jpg"
     },
 ]
 
