@@ -4,63 +4,68 @@ import Sortable from 'sortablejs';
 import SearchIcon from '@mui/icons-material/Search';
 import Grid from "../Grid/grid"
 import React, { useState, useEffect, useRef } from 'react'
-
+import img1 from "../../assets/bag1.jpg"
+import img2 from "../../assets/bag2.jpg"
+import img3 from "../../assets/food1.jpg"
+import img4 from "../../assets/shoe1.jpg"
+import img5 from "../../assets/shoe2.jpg"
+import img6 from "../../assets/shoe3.jpg"
 const imageList = [
     {
         id: 1,
         tag: "Bag",
         des: "feel the love of a chic bag",
-        image: "bag1.jpg"
+        image: img1
 
     },
     {
         id: 2,
         tag: "Bag",
         des: "feel the love of a chic bag",
-        image: "bag2.jpg"
+        image: img2 
 
     },
     {
         id: 3,
         tag: "Bag",
         des: "feel the love of a chic bag",
-        image: "bag1.jpg"
+        image: img1
     },
     {
         id: 4,
         tag: "Food",
         des: "food is the gift of life",
-        image: "food1.jpg"
+        image: img3
     },
     {
         id: 5,
         tag: "Food",
         des: "food is the gift of life",
-        image: "food1.jpg"
+        image: img3
     },
     {
         id: 6,
         tag: "Shoe",
         des: "walk like a boss",
-        image: "shoe1.jpg"
+        image: img4
     },
     {
         id: 7,
         tag: "Shoe",
         des: "walk like a boss",
-        image: "shoe2.jpg"
+        image: img5
     },
     {
         id: 8,
         tag: "Shoe",
         des: "walk like a boss",
-        image: "shoe3.jpg"
+        image: img6
     },
     {
         id: 9,
         tag: "Shoe",
         des: "walk like a boss",
-        image: "shoe3.jpg"
+        image: img6
     },
 ]
 
@@ -94,7 +99,7 @@ function List() {
                 <SearchIcon />
             </div>
 
-            <div ref={gridRef} className="grid grid-cols-1 m-auto  md:grid-cols-2 lg:grid-cols-3 gap-[5px] p-[5px] md:p-[5px] lg:p-0">
+            <div ref={gridRef} className="grid grid-cols-1 m-auto  md:grid-cols-2 lg:grid-cols-3 gap-[5px] p-[5px] md:p-[5px] lg:p-0 ">
                 {
                     photo.filter((photo) => photo.tag.toLowerCase().includes(query.toLowerCase())).map(({ id, tag , image, des }) => {
                             return <div className='' data-id={id} key={id}>
