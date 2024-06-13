@@ -3,7 +3,6 @@ import Navbar from "../../Component/Navbar/nav"
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../firebase";
 import { useEffect } from 'react';
-
 function Home(){
     useEffect(() =>{
         onAuthStateChanged(auth, (user) =>{
@@ -15,6 +14,7 @@ function Home(){
             }
         },[])
     })
+    
     return(
        <>
        <Navbar/>
