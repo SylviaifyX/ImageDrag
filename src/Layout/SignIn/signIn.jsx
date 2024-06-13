@@ -1,71 +1,74 @@
-
 import { useState } from "react";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "./../../firebase";
 import { Link } from "react-router-dom";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebase";
 import { useNavigate } from "react-router-dom";
-function Login() {
+function SignIn() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const onLogin = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
-    signInWithEmailAndPassword(auth, email, password)
+    await createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        navigate("/");
         console.log(user);
+        navigate("/login");
+        // ...
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log("Error during sign in:",errorCode, errorMessage);
+        console.log(errorCode, errorMessage);
+        // ..
       });
   };
 
   return (
-    <section className=" w-full min-h-screen flex items-center justify-center p-[10px] ">
-      <form onSubmit={onLogin} className=" w-full max-w-[600px] min-h-[50vh] py-[20px] px-[20px] bg-blue-300 flex flex-col gap-[7px] rounded-md ">
+    <section className=" w-full min-h-screen flex items-center justify-center p-[10px]">
+      <form onClick={onSubmit} className=" w-full max-w-[600px] min-h-[50vh] py-[20px] px-[20px] bg-blue-300 flex flex-col gap-[7px] ">
         <label className="font-bold">UserName.</label>
         <input
-        //   ref={emailRef}
+          //   ref={emailRef}
           type="email"
           value={email}
-          onChange={(e) =>setEmail(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
+          required
           className="ring-1 outline-none rounded p-[10px]"
           placeholder="email"
         ></input>
-        {/* <span>logged as: {currentUser?.email}</span> */}
 
         <p></p>
         <label className="font-bold">Password.</label>
         <input
-        //   ref={passwordRef}
+          //   ref={passwordRef}
           type="password"
           value={password}
-          onChange={(e)=> setPassword(e.target.value)}
+          onChange={(e) => setPassword(e.target.value)}
+          required
           className="ring-1 outline-none rounded p-[10px]"
           placeholder="password"
         ></input>
         <div className="flex  m-auto w-full gap-[30px] align-center justify-center">
           <button
             type="submit"
-            className="bg-blue-500 p-[10px] pl-[25px] pr-[25px] text-white text-[18px] font-bold cursor-pointer rounded"
+            className="bg-blue-500 p-[10px] text-white text-[18px] font-bold cursor-pointer rounded"
           >
-            Login
+            SignUp
           </button>
         </div>
 
         <p>
-          Don't have an account?{" "}
-          <Link to="/signin" className="text-red-800 font-bold">
-            SignUp
+          Already have an account?{" "}
+          <Link to="/login" className="text-red-800 font-bold">
+            Login
           </Link>
         </p>
       </form>
     </section>
   );
 }
-export default Login;
+
+export default SignIn;
