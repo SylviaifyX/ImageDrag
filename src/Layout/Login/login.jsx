@@ -36,6 +36,7 @@ function Login() {
           onChange={(e) =>setEmail(e.target.value)}
           className="ring-1 outline-none rounded p-[10px]"
           placeholder="email"
+          required
         ></input>
         {/* <span>logged as: {currentUser?.email}</span> */}
 
@@ -48,6 +49,7 @@ function Login() {
           onChange={(e)=> setPassword(e.target.value)}
           className="ring-1 outline-none rounded p-[10px]"
           placeholder="password"
+          required
         ></input>
         <div className="flex  m-auto w-full gap-[30px] align-center justify-center">
           <button

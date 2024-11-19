@@ -35,9 +35,9 @@ function SignIn() {
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          required
           className="ring-1 outline-none rounded p-[10px]"
           placeholder="email"
+          required
         ></input>
 
         <p></p>
@@ -47,9 +47,9 @@ function SignIn() {
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          required
           className="ring-1 outline-none rounded p-[10px]"
           placeholder="password"
+          required
         ></input>
         <div className="flex  m-auto w-full gap-[30px] align-center justify-center">
           <button
